@@ -1,8 +1,23 @@
 .title {
     text-align: center;
+    background-color: red;
 }
 
-.insert-todo {
-    margin: auto;
+.todo-container {
     text-align: center;
+    background-color: green;
+}
+
+#new-todo-input {
+    
+    text-align: center;
+
+}
+
+#new-todo-submit {
+    
+}
+
+.tasks {
+    background-color: aquamarine;
 }
