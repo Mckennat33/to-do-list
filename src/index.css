@@ -14,14 +14,18 @@
 
 }
 
+.todo-list-container {
+    text-align: center;
+}
+
 #new-todo-submit {
     
 }
 
 .tasks {
-    
+    text-align: center;
 }
 
 .new-tasks {
-    background-color: blue;
+    background-color: turquoise;
 }
