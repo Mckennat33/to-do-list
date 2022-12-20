@@ -20,8 +20,10 @@ function addToDo(event) {
     const editBttn = document.createElement("button")
     editBttn.id = "edit-button"
     editBttn.innerHTML = "Edit"
-    editBttn.addEventListener("click", function editButton() {
-
+    editBttn.addEventListener("click", function editButton(event) {
+        event.preventDefault()
+            itemDiv.removeAttribute("readonly", "readonly")
+            editBttn.innerHTML = "Save"
     })
 
 //delete new task
@@ -30,7 +32,8 @@ function addToDo(event) {
     deleteBttn.innerHTML = 'Delete'
     deleteBttn.addEventListener("click", function deleteToDo(e) {
         e.preventDefault()
-        listItems.remove()
+        listItems.removeChild()
+
     })
 
 // appending new task to div 
@@ -38,6 +41,7 @@ function addToDo(event) {
     const itemDiv = document.createElement("input")
     itemDiv.className = "new-tasks"
     itemDiv.type = "text"
+    itemDiv.setAttribute("readonly", "readonly")
     itemDiv.placeholder = newTask
 
     //listItems.append(itemDiv, editBttn, deleteBttn)
@@ -52,6 +56,3 @@ function addToDo(event) {
 
 }
 
-function editButton() {
-    console.log("edit")
-}
