@@ -35,12 +35,13 @@ function addToDo(event) {
     const deleteBttn = document.createElement("button")
     deleteBttn.id = "delete-bttn"
     deleteBttn.innerHTML = 'Delete'
-    deleteBttn.addEventListener("click", function deleteToDo(e) {
-        e.preventDefault()
-        listItems.remove() // Remove is not working for newItem and itemDiv removes the todo Item 
-        // but not the edit and todo items attached to that todo. And listItems removes all of the todo's
-        console.log("Delete")
+    deleteBttn.addEventListener("click", function deleteToDo(event) {
+        event.preventDefault()
+        listItemsDiv.remove()
     })
+
+    const listItemsDiv = document.createElement("div")
+    listItemsDiv.id = "items-div"
 
     const itemDiv = document.createElement("input")
     itemDiv.className = "new-tasks"
@@ -48,12 +49,13 @@ function addToDo(event) {
     itemDiv.setAttribute("readonly", "readonly")
     itemDiv.placeholder = newTask
 
-    //listItems.append(itemDiv, editBttn, deleteBttn)
-
     if (!newTask == "") {
-        listItems.append(itemDiv, editBttn, deleteBttn)
+        listItems.append(listItemsDiv)
+        listItemsDiv.append(itemDiv, editBttn, deleteBttn)
+
     } else {
         alert("Please enter a task")
     }
 }
+
 
